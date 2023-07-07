@@ -18,7 +18,9 @@ public class EnemyGuy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //animação
         rig = GetComponent<Rigidbody2D>();
+        //fisica
         anim = GetComponent<Animator>();
     }
 

@@ -1405,6 +1405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98687ccf64d4b8b4d94e284fa1755fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   Speed: 5
   jumpForce: 8
   Bow: {fileID: 998759351784485060, guid: 6390e2c0f1f9eb44bbbba0d5df58b423, type: 3}

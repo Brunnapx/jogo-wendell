@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-
+    public int health;
     public float Speed;
     public float jumpForce;
 
@@ -128,6 +128,17 @@ public class player : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             isFire = false;
             anim.SetInteger("transition", 0);
+        }
+    }
+
+    public void Damage(int dmg)
+    {
+        health -= dmg;
+
+        if (health <= 0)
+        {
+            //chamar game over 
+            
         }
     }
 

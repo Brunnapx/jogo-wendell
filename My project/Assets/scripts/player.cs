@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public int health;
+    public int health = 3;
     public float Speed;
     public float jumpForce;
 
@@ -27,6 +27,9 @@ public class player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
+        GameController.instance.UpdateLives(health);
+        
     }
 
     // Update is called once per frame
@@ -134,6 +137,7 @@ public class player : MonoBehaviour
     public void Damage(int dmg)
     {
         health -= dmg;
+        GameController.instance.UpdateLives(health);
 
         if (health <= 0)
         {

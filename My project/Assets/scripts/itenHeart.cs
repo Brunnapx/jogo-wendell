@@ -9,9 +9,10 @@ public class itenHeart : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "player")
+        if (col.gameObject.tag == "Player")
         {
-            //Collision.
+            col.gameObject.GetComponent<player>().IncreaseLife(healthValue);
+            Destroy(gameObject);
         }
     }
 }

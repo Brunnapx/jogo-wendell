@@ -159,7 +159,7 @@ public class player : MonoBehaviour
         }
     }
 
-    public void increselife(int value)
+    public void IncreaseLife(int value)
     {
         health += value;
         GameController.instance.UpdateLives(health);

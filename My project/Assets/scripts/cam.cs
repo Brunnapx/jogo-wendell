@@ -6,10 +6,13 @@ public class cam : MonoBehaviour
 {
     private Transform player;
     public float smooth;
+
+    public Vector3 Respawn;
     
     // Start is called before the first frame update
     void Start()
     {
+        Respawn = transform.position;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

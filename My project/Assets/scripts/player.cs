@@ -10,6 +10,8 @@ public class player : MonoBehaviour
     public float Speed;
     public float jumpForce;
 
+    public AudioSource tiro;
+    
     public GameObject Bow;
     public Transform FirePoint;
     
@@ -19,7 +21,7 @@ public class player : MonoBehaviour
 
     private Rigidbody2D rig;
     private Animator anim;
-
+    public Vector3 respowCheck;
     private float movement;
     
     // Start is called before the first frame update
@@ -27,7 +29,7 @@ public class player : MonoBehaviour
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        
+        respowCheck = transform.position;
         GameController.instance.UpdateLives(health);
         
     }
@@ -116,6 +118,7 @@ public class player : MonoBehaviour
             isFire = true;
             anim.SetInteger("transition", 3);
             GameObject bow = Instantiate(Bow, FirePoint.position, FirePoint.rotation);
+            tiro.Play();
 
             if (transform.rotation.y == 0)
             {

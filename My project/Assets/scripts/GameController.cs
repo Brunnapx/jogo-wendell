@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
+    public player Jogador;
     public Text healthText;
 
     public int score;
@@ -82,7 +82,13 @@ public class GameController : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+        Jogador.transform.position = Jogador.respowCheck;
+        Jogador.health = 3;
+        UpdateLives(Jogador.health);
+        cam CameraRes = Camera.main.GetComponent<cam>();
+        CameraRes.transform.position = CameraRes.Respawn;
+
+        gameOverObj.SetActive(false);
     }
     
 }

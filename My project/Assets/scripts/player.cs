@@ -155,7 +155,7 @@ public class player : MonoBehaviour
         if (health <= 0)
         {
             //chamar game over 
-            
+            GameController.instance.gameOver();
         }
     }
 
@@ -171,5 +171,11 @@ public class player : MonoBehaviour
         {
             isJumping = false;
         }
+        
+        if(coll.gameObject.layer == 9)
+        {
+            GameController.instance.gameOver();
+        }
+        
     }
 }

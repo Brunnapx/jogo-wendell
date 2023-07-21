@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameController : MonoBehaviour
     public Text scoreText;
 
     public GameObject pauseObj;
+    public GameObject gameOverObj;
     
 
     public int totalScore;
@@ -70,6 +72,17 @@ public class GameController : MonoBehaviour
             Time.timeScale = 1f;
         }
         
+    }
+
+    public void gameOver()
+    {
+        gameOverObj.SetActive(true);
+        //Time.timeScale = 0f;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
     }
     
 }

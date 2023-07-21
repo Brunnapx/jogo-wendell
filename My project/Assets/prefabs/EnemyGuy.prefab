@@ -145,6 +145,7 @@ MonoBehaviour:
   walkTime: 2
   walkRihgt: 1
   health: 5
+  damage: 1
 --- !u!61 &4244202179088947992
 BoxCollider2D:
   m_ObjectHideFlags: 0

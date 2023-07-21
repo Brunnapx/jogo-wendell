@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class EnemyGuy : MonoBehaviour
     public bool walkRihgt = true;
 
     public int health;
+    public int damage;
 
     private float timer;
 
@@ -56,5 +58,14 @@ public class EnemyGuy : MonoBehaviour
         {
           Destroy(gameObject);  
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<player>().Damage(damage);
+        }
+        
     }
 }
